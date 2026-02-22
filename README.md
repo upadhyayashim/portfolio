@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="./frontend/src/assets/preview.png" width="800" />
+</p>
 # Ashim Upadhyay – Portfolio
 
 <p align="center">
