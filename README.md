@@ -1,4 +1,4 @@
-# Ashim Upadhyay - MERN Portfolio
+# Ashim Upadhyay - Portfolio
 
 Full-stack MERN portfolio application showcasing scalable backend architecture, financial automation systems, and modern React UI.
 
@@ -38,9 +38,14 @@ Backend: https://mern-portfolio-backend.onrender.com
 ---
 
 ## 📂 Project Structure
+```bash
 portfolio/
 ├── frontend/
-└── backend/
+│
+├── backend/
+│
+└── README.md
+```
 
 ## ⚙️ Installation (Local Setup)
 
