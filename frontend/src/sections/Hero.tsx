@@ -33,10 +33,10 @@ const Hero = () => {
 
             {/* Social Icons */}
             <div className="flex gap-6 mt-6 text-2xl text-gray-400">
-                <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noreferrer" className="hover:text-blue-500 transition">
+                <a href="https://www.linkedin.com/in/ashim-kumar-upadhyay-429a55112/" target="_blank" rel="noreferrer" className="hover:text-blue-500 transition">
                     <FaLinkedin />
                 </a>
-                <a href="https://github.com/your-username" target="_blank" rel="noreferrer" className="hover:text-white transition">
+                <a href="https://github.com/upadhyayashim" target="_blank" rel="noreferrer" className="hover:text-white transition">
                     <FaGithub />
                 </a>
                 <a href="mailto:upadhyay.ashim@gmail.com" className="hover:text-white transition">
