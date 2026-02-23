@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
+    "start": "node dist/server.js",
     "dev": "npm run build && nodemon dist/server.js",
     "test": "jest",
     "test:watch": "jest --watch",
