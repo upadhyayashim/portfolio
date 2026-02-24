@@ -11,7 +11,7 @@ app.use(helmet());
 app.use(cors({
     origin: [
         "http://localhost:5173",
-        "https://portfolio-eb85-olive.vercel.app"
+        "https://ashimupadhyay-portfolio.vercel.app/"
     ],
     credentials: true
 }));
