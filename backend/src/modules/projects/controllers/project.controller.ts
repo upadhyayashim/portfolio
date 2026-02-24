@@ -21,6 +21,7 @@ export const create = async (req: Request, res: Response) => {
 };
 
 export const getProjects = async (req: Request, res: Response) => {
+    console.log('called ===========');
     const projects = await getAllProjects();
 
     return res.status(200).json(apiResponse(true, "Success", projects));
