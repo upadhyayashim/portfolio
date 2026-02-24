@@ -12,7 +12,7 @@ const Hero = () => {
     const handleDownloadResume = async () => {
         try {
             const res = await getResume();
-            console.log('res ======>');
+            console.log('res ======>', res);
             window.open(res.data.url, "_blank");
         } catch (error) {
             console.error("Resume fetch failed");
