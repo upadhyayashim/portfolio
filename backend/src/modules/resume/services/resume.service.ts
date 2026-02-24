@@ -13,7 +13,7 @@ export const saveResume = async (file: Express.Multer.File) => {
             }
 
             const resume = await ResumeRepository.upsert({
-                url: result?.url,
+                url: result?.secure_url,
                 publicId: result?.public_id
             });
 
