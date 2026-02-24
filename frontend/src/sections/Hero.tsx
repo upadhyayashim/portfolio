@@ -9,12 +9,24 @@ const Hero = () => {
         section?.scrollIntoView({ behavior: "smooth" });
     };
 
+    // const handleDownloadResume = async () => {
+    //     try {
+    //         const res = await getResume();
+    //         console.log('res ======>', res);
+    //         window.open(res.data.url, "_blank");
+    //     } catch (error) {
+    //         console.error("Resume fetch failed");
+    //     }
+    // };
     const handleDownloadResume = async () => {
+        const newTab = window.open("", "_blank");
+        if (!newTab) return;
         try {
             const res = await getResume();
-            console.log('res ======>', res);
-            window.open(res.data.url, "_blank");
+            console.log('res=======>with', res);
+            newTab.location.href = res.data.url;
         } catch (error) {
+            newTab.close();
             console.error("Resume fetch failed");
         }
     };
