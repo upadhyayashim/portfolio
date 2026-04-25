@@ -12,7 +12,37 @@ export const SkillRepository = {
     },
 
     findByCategory: async (category: ISkill["category"]) => {
-        console.log('category =========>', category);
         return SkillModel.find({ category: category }).sort({ level: -1 });
     },
+
+    findAllSortedByCategory: async () => {
+        const result = await SkillModel.aggregate([
+            {
+                $addFields: {
+                    sortOrder: {
+                        $indexOfArray: [
+                            ["backend", "frontend", "devops", "other", "database"],
+                            "$category"
+                        ]
+                    }
+                }
+            },
+            {
+                $sort: { sortOrder: 1 }
+            }
+        ]);
+
+        return result;
+    },
+
+    updateSkillById: async (id: string, payload: Partial<ISkill>) => {
+        return SkillModel.findByIdAndUpdate(
+          id,
+          { $set: payload },
+          {
+            new: true,          // return updated doc
+            runValidators: true // apply schema validation
+          }
+        );
+      }
 };

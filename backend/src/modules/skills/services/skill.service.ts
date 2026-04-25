@@ -31,3 +31,21 @@ export const getAllSkills = async () => {
 export const getSkillsByCategory = async (category: ISkill["category"]) => {
     return await SkillRepository.findByCategory(category);
 };
+
+export const getSortedSkills = async () => {
+    return await SkillRepository.findAllSortedByCategory();
+}
+
+export const updateSkill = async (id: string, payload: Partial<ISkill>) => {
+    if (!id) {
+      throw new Error("Skill ID is required");
+    }
+
+    const updated = await SkillRepository.updateSkillById(id, payload);
+
+    if (!updated) {
+      throw new Error("Skill not found");
+    }
+
+    return updated;
+  }

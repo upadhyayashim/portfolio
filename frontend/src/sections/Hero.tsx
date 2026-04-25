@@ -9,21 +9,11 @@ const Hero = () => {
         section?.scrollIntoView({ behavior: "smooth" });
     };
 
-    // const handleDownloadResume = async () => {
-    //     try {
-    //         const res = await getResume();
-    //         console.log('res ======>', res);
-    //         window.open(res.data.url, "_blank");
-    //     } catch (error) {
-    //         console.error("Resume fetch failed");
-    //     }
-    // };
     const handleDownloadResume = async () => {
         const newTab = window.open("", "_blank");
         if (!newTab) return;
         try {
             const res = await getResume();
-            console.log('res=======>with', res);
             newTab.location.href = res.data.url;
         } catch (error) {
             newTab.close();
@@ -39,8 +29,8 @@ const Hero = () => {
             </h1>
 
             <p className="mt-4 text-xl text-gray-400 max-w-2xl">
-                Senior Backend-Focused MERN Engineer building scalable financial systems
-                and high-performance applications.
+            Senior Software Engineer crafting scalable, high-performance systems across the full MERN & MEAN stack.
+            Specialising in fin-tech architecture, real-time systems, and distributed backend engineering.
             </p>
 
             {/* Social Icons */}

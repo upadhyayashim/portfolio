@@ -25,3 +25,7 @@ export interface ISkill extends Document {
   createdAt: Date;
   updatedAt: Date;
 }
+
+export interface skillUpdateParams {
+  id: string;
+}

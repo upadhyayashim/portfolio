@@ -5,6 +5,7 @@ export interface Experience {
     startDate: string;
     endDate: string;
     description: string;
+    isCurrent: boolean;
     techStack: string[];
 }
  

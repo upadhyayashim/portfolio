@@ -14,6 +14,7 @@ const ExperienceSection = () => {
             const experienceResponse = await fetchExperiences();
 
             if (experienceResponse && experienceResponse.message === 'Success') {
+                console.log('exporesd =======>', experienceResponse.data);
                 setExperiences(experienceResponse.data);
             }
         } catch (error) {
@@ -48,7 +49,7 @@ const ExperienceSection = () => {
                             </h3>
 
                             <p className="text-sm text-gray-400 mt-1">
-                                {exp.startDate} - {exp.endDate}
+                                {exp.startDate} - {exp?.isCurrent ? `Present` : exp.endDate}
                             </p>
 
                             <p className="text-gray-300 mt-4 leading-relaxed">

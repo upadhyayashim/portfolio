@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { create, getAll, getOne } from "../controllers/experience.controller";
+import { create, getAll, getOne, remove, update } from "../controllers/experience.controller";
 
 const router = Router();
 
@@ -9,5 +9,7 @@ router.get('/:id', getOne);
 
 // Private
 router.post('/', create);
+router.put("/:id", update);     // UPDATE
+router.delete("/:id", remove);  // DELETE
 
 export default router;

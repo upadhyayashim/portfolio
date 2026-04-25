@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { create, getAll, getByCategory } from "../controllers/skill.controller";
+import { create, getAll, getByCategory, updateSkillById } from "../controllers/skill.controller";
 import { authenticate } from "../../../middlewares/auth.middleware";
 
 
@@ -11,5 +11,6 @@ router.get("/:category", getByCategory);
 
 // Protected
 router.post("/", authenticate, create);
+router.post("/:id", authenticate, updateSkillById);
 
 export default router;

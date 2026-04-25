@@ -7,10 +7,22 @@ export const ExperienceRepository = {
     },
 
     findAll: async () => {
-        return ExperienceModel.find().sort({ createdAt: -1 });
+        return ExperienceModel.find().sort({ is_current: -1, startDate: -1 });
     },
 
     findById: async (id: string) => {
         return ExperienceModel.findById(id);
+    },
+
+    updateById: async (id: string, data: Partial<ExperienceDTO>) => {
+        return ExperienceModel.findByIdAndUpdate(
+            id,
+            { $set: data },
+            { new: true, runValidators: true }
+        );
+    },
+
+    deleteById: async (id: string) => {
+        return ExperienceModel.findByIdAndDelete(id);
     },
 };

@@ -1,3 +1,7 @@
+import { useEffect, useState } from "react";
+import { getSkills } from "../api/skill-service";
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const skills = [
     "React.js",
     "Node.js",
@@ -12,6 +16,20 @@ const skills = [
 ];
 
 const Skills = () => {
+    const [skills, setSkills] = useState([]);
+    
+    useEffect(() => {
+        fetchSkills();
+    }, []);
+
+    const fetchSkills = async () => {
+        const response = await getSkills();
+        if (response.status === 200) {
+            const data = response?.data?.data || [];
+            setSkills(data);
+        }
+    }
+    
     return (
         <section
             id="skills"
@@ -30,7 +48,7 @@ const Skills = () => {
                         className="bg-gray-900 border border-gray-800 rounded-2xl p-5 text-center 
                            hover:border-blue-500 hover:scale-105 transition duration-300"
                     >
-                        <p className="text-white font-medium">{skill}</p>
+                        <p className="text-white font-medium">{skill?.name}</p>
                     </div>
                 ))}
             </div>
